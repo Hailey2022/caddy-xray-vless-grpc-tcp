@@ -1,4 +1,4 @@
-# caddy-xray-vless-grpc-tcp
+# caddy-xray-vless-grpc-tls
 
 ```
 apt install -y debian-keyring debian-archive-keyring apt-transport-https
@@ -11,6 +11,10 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
 # copy xray.json to /usr/local/etc/xray/config.json and replace the serviceName and uuid
 vim /usr/local/etc/xray/config.json
 systemctl restart xray
+
+# copy Caddyfile to /etc/caddy/Caddyfile and replace the domain and serviceName
+vim /etc/caddy/Caddyfile
+systemctl restart caddy
 
 # make a fake website
 ```
